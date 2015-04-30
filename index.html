@@ -5,8 +5,16 @@
 	<title>Angular Codeschool</title>
 	<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
 </head>
-<body>
-	
+<body ng-controller="StoreController as store">
+
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="product in store.products">
+			<h3>
+				{{product.name}}
+				<em class="pull-right">{{product.price | currency}}</em>
+			</h3>
+		</li>
+	</ul>
 
 	<script src="js/vendor/angular.min.js"></script>
 	<script src="js/main.js"></script>
